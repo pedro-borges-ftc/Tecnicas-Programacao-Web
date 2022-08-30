@@ -9,6 +9,31 @@ ol{
     margin: 12px 0;
 }
 
+input{
+    height: 40px;
+    width: 200px;
+    align-items: center;
+    margin-bottom: 12px;
+    color: rgb(73,71,71);
+    border-radius: 6px;
+    text-align: center;
+}
+
+button{
+    height: 40px;
+    width: 200px;
+    align-items: center;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    color: white;
+    background-color: green;
+    transition: background 400ms;
+}
+
+button:hover{
+    background: rgb(179, 177, 177);
+}
+
 p{
     font-size: 14px;
     opacity: 0.8;
