@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Registradora</title>
+    <style>
+        body{
+            background-color: rgb(29, 150, 225);
+            color: white;
+        }
+        section{
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            margin: auto;
+        }
+        div{
+            color: black;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        table{
+            margin: auto;
+        }
+        footer, header, div{
+            text-align: center;
+        }
+        button{
+            background-color: blue;
+            color: white;
+            margin-top: 8px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header><h1>Caixa Registradora</h1></header>
+    <section>
+        <div id="diventrada">
+            <label for="">Valor do Produto R$</label><br>
+            <input type="number" id="txtvalor" ><br>
+            <button onclick="adicionarProduto()">Adicionar Produto</button>
+        </div>
+        <div id="divtabela">
+            <table id="tblprodutos" border="1">
+                <tr>
+                    <td>Item</td>
+                    <td>Valor</td>
+                </tr>
+            </table>
+        </div>
+        <div id="divresultado">
+            <label for="">Total Compra R$</label><br>
+            <input type="number" id="txttotal" >
+        </div>
+    </section>
+    <footer>Desenvolvido em TPW</footer>
+
+    <script>
+        function adicionarProduto(){
+            //leitura dos elementos
+            var txtvalor = Number(document.getElementById("txtvalor").value)
+            var txttotal = Number(document.getElementById("txttotal").value)
+            var tblprodutos = document.getElementById("tblprodutos")
+            var contador = tblprodutos.childElementCount
+
+            //Processamento dos dados
+            var coluna1 = document.createElement('td')
+            var coluna2 = document.createElement('td')
+            var linha = document.createElement('tr')
+
+            coluna1.innerHTML = `Produto ${contador}`
+            coluna2.innerHTML = `R$ ${txtvalor.toFixed(2).replace('.',',')}`
+
+            linha.appendChild(coluna1)
+            linha.appendChild(coluna2)
+            tblprodutos.appendChild(linha)
+
+            document.getElementById("txttotal").value = txttotal + txtvalor
+        }
+    </script>
+</body>
+</html>
