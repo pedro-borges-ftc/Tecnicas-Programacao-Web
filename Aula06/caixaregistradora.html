@@ -54,7 +54,7 @@
         </div>
         <div id="divresultado">
             <label for="">Total Compra R$</label><br>
-            <input type="number" id="txttotal" >
+            <input type="text" id="txttotal" >
         </div>
     </section>
     <footer>Desenvolvido em TPW</footer>
@@ -63,7 +63,7 @@
         function adicionarProduto(){
             //leitura dos elementos
             var txtvalor = Number(document.getElementById("txtvalor").value)
-            var txttotal = Number(document.getElementById("txttotal").value)
+            var txttotal = Number(document.getElementById("txttotal").value.replace(',','.'))
             var tblprodutos = document.getElementById("tblprodutos")
             var contador = tblprodutos.childElementCount
 
@@ -79,7 +79,9 @@
             linha.appendChild(coluna2)
             tblprodutos.appendChild(linha)
 
-            document.getElementById("txttotal").value = txttotal + txtvalor
+            resultado = txttotal + txtvalor
+
+            document.getElementById("txttotal").value = resultado.toFixed(2).replace('.',',')
         }
     </script>
 </body>
