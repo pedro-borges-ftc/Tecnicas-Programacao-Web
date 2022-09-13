@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crescimento Populacional</title>
+    <style>
+        body{
+            background-color: rgb(110, 49, 110);
+            color: white;
+        }
+        section{
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            margin: auto;
+        }
+        div{
+            color: black;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        table{
+            margin: auto;
+        }
+        footer, header, div{
+            text-align: center;
+        }
+       button{
+            background-color: rgb(48, 128, 54);
+            color: white;
+            margin-top: 8px;
+       }
+        
+    </style>
+</head>
+<body>
+
+    <header><h1>Crescimento Populacional</h1></header>
+    <section>
+        <div id="diventrada">
+            <label for="">Ano Inicial</label><br>
+            <input type="number" id="txtanoinicial" ><br><br
+            
+            <label for="">População</label><br>
+            <input type="number" id="txtpopulacao" ><br><br>
+            
+            <label for="">Taxa Crescimento (%)</label><br>
+            <input type="number" id="txttaxa" ><br><br>
+            
+            <label for="">Ano Final</label><br>
+            <input type="number" id="txtanofinal" ><br>
+            
+            <button onclick="calcular()">Calcular</button>
+        </div>
+        <div id="divtabela">
+            <table id="tblsimulacao" border="1">
+                <thead>
+                    <td>Ano</td>
+                    <td>População</td>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+    <footer>Desenvolvido em TPW</footer>
+
+    <script>
+        function calcular(){
+            //leitura dos elementos
+            var txtanoinicial = Number(document.getElementById("txtanoinicial").value)
+            var txtpopulacao = Number(document.getElementById("txtpopulacao").value)
+            var txttaxa = Number(document.getElementById("txttaxa").value)
+            var txtanofinal = Number(document.getElementById("txtanofinal").value)
+            var tblsimulacao = document.getElementById("tblsimulacao").querySelector("tbody")
+            //var contador = tblsimulacao.childElementCount
+
+            tblsimulacao.innerHTML = ''
+
+            //Processamento dos dados
+            for(i = txtanoinicial; i<= txtanofinal; i++ ){
+                var coluna1 = document.createElement('td')
+                var coluna2 = document.createElement('td')
+                var linha = document.createElement('tr')
+
+                coluna1.innerHTML = `${i}`
+                coluna2.innerHTML = `${txtpopulacao.toFixed(0)}`
+
+                linha.appendChild(coluna1)
+                linha.appendChild(coluna2)
+                tblsimulacao.appendChild(linha)
+
+                txtpopulacao += txtpopulacao * (txttaxa / 100)
+            }
+            
+        }
+    </script>
+</body>
+</html>
