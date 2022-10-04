@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna on-line</title>
+    <style>
+        body {
+            background-color: rgb(49, 53, 110);
+            color: white;
+        }
+
+        section {
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            margin: auto;
+        }
+
+        div {
+            color: black;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        footer,
+        header,
+        div {
+            text-align: center;
+        }
+
+        button {
+            background-color: rgb(48, 128, 54);
+            color: white;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Urna on-line</h1>
+    </header>
+    <section>
+        <div id="divtabela">
+            <table id="tblsimulacao" border="1">
+                <thead>
+                    <td>Número</td>
+                    <td>Candidato</td>
+                </thead>
+                <tr>
+                    <td>0</td>
+                    <td>Branco</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Fulano</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Beltrano</td>
+                </tr>
+                <tr>
+                    <td>99</td>
+                    <td>Nulo</td>
+                </tr>
+                <tbody></tbody>
+            </table>
+        </div>
+        <hr>
+        <div id="diventrada">
+            <label for="">Candidato</label><br>
+            <input type="number" id="txtcandidato" onblur="validarCandidato()"><br>
+
+            <button onclick="votar()">Confirma</button>
+            <br>
+            <button onclick="votar()">Finalizar Votação</button>
+        </div>
+        <hr>
+        <div id="divresultado">
+            <label for="">RESULTADO</label><br>
+            <table id="tblresultado" border="1">
+                <thead>
+                    <td>Número</td>
+                    <td>Candidato</td>
+                    <td>Percentual</td>
+                </thead>
+                <tr>
+                    <td>0</td>
+                    <td>Branco</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Fulano</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>Beltrano</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>99</td>
+                    <td>Nulo</td>
+                    <td></td>
+                </tr>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+    <footer>Desenvolvido em TPW</footer>
+
+    <script>
+        function validarCandidato() {
+            var txtcandidato = window.document.getElementById("txtcandidato")
+            var voto = Number(txtcandidato.value)
+            if (voto == 0 || voto == 13 || voto == 22 || voto == 99) {
+                txtcandidato.style.background = "white"
+                return true
+            } else {
+                alert("Digite um valor válido: 0,13,22,99")
+                txtcandidato.style.background = "yellow"
+                return false
+            }
+        }
+
+        function votar() {
+
+            if (validarCandidato() == true) {
+                //leitura dos elementos
+                var txtanoinicial = Number(document.getElementById("txtanoinicial").value)
+                var txtpopulacao = Number(document.getElementById("txtpopulacao").value)
+                var txttaxa = Number(document.getElementById("txttaxa").value)
+                var txtanofinal = Number(document.getElementById("txtanofinal").value)
+                var tblsimulacao = document.getElementById("tblsimulacao").querySelector("tbody")
+                //var contador = tblsimulacao.childElementCount
+
+                tblsimulacao.innerHTML = ''
+
+                //Processamento dos dados
+                for (i = txtanoinicial; i <= txtanofinal; i++) {
+                    var coluna1 = document.createElement('td')
+                    var coluna2 = document.createElement('td')
+                    var linha = document.createElement('tr')
+
+                    coluna1.innerHTML = `${i}`
+                    coluna2.innerHTML = `${txtpopulacao.toFixed(0)}`
+
+                    linha.appendChild(coluna1)
+                    linha.appendChild(coluna2)
+                    tblsimulacao.appendChild(linha)
+
+                    txtpopulacao += txtpopulacao * (txttaxa / 100)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
