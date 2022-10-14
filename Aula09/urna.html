@@ -17,8 +17,8 @@
             background-color: white;
             border-radius: 8px;
             margin: auto;
-            padding-top:1rem;
-            padding-bottom:1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
 
         div {
@@ -27,7 +27,7 @@
             margin-bottom: 5px;
         }
 
-        table {            
+        table {
             margin: auto;
         }
 
@@ -71,10 +71,6 @@
                     <td>22</td>
                     <td>Beltrano</td>
                 </tr>
-                <tr>
-                    <td>99</td>
-                    <td>Nulo</td>
-                </tr>
                 <tbody></tbody>
             </table>
         </div>
@@ -89,7 +85,7 @@
         </div>
         <hr>
         <div id="divresultado">
-            
+
         </div>
     </section>
     <footer>Desenvolvido em TPW</footer>
@@ -102,15 +98,16 @@
         var txtcandidato = window.document.getElementById("txtcandidato")
         var divresultado = document.getElementById("divresultado")
 
-        function validarCandidato() {            
+        function validarCandidato() {
             var voto = Number(txtcandidato.value)
-            if (voto == 0 || voto == 13 || voto == 22 || voto == 99 || voto == 999) {
+            //if (voto == 0 || voto == 13 || voto == 22 || voto == 999) {
+            if (voto <= 999) {
                 txtcandidato.style.background = "white"
                 return true
             } else {
                 alert("Digite um valor válido: 0,13,22,99")
                 txtcandidato.style.background = "yellow"
-                txtcandidato.focus()
+                //txtcandidato.focus()
                 return false
             }
         }
@@ -121,7 +118,7 @@
                 txtcandidato.value = ""
                 txtcandidato.focus()
                 divresultado.innerHTML = ""
-                
+
                 switch (voto) {
                     case 0:
                         votosBrancos++
@@ -132,29 +129,35 @@
                     case 22:
                         votosBeltrano++
                         break
-                    case 99:
-                        votosNulo++
-                        break
                     case 999:
-                        var totalVotos = votosFulano + votosBeltrano + votosBrancos + votosNulo
-                        var percentualBrancos = votosBrancos / totalVotos * 100
-                        var percentualNulos = votosNulo / totalVotos * 100
-                        var resultado = '<h4> RESULTADO </h4>'
-                        resultado += `<p> Votos Fulano: ${votosFulano} </p>`
-                        resultado += `<p> Votos Beltrano: ${votosBeltrano} </p>`
-                        resultado += `<p> Votos Brancos: ${votosBrancos} </p>`
-                        resultado += `<p> Votos Nulos: ${votosNulo} </p>`
-                        resultado += `<p> ------------------------ </p>`
-                        resultado += `<h4> Total de votos: ${totalVotos} </h4>`
-                        resultado += `<p> Percentual de Brancos: ${percentualBrancos.toFixed(2)} % </p>`
-                        resultado += `<p> Percentual de Nulos: ${percentualNulos.toFixed(2)} % </p>`
-                        divresultado.innerHTML = resultado
+                        exibirResultado();
                         break
                     default:
-                    divresultado.innerHTML = 'Opção Inválida. <br> Tente novamente.'
+                        votosNulo++
                 }
             }
         }
+
+        function exibirResultado() {
+            var totalVotos = votosFulano + votosBeltrano + votosBrancos + votosNulo
+            var percentualBrancos = votosBrancos / totalVotos * 100
+            var percentualNulos = votosNulo / totalVotos * 100
+            var percentualFulano = votosFulano / totalVotos * 100
+            var percentualBeltrano = votosBeltrano / totalVotos * 100
+            var resultado = '<h4> RESULTADO </h4>'
+            resultado += `<p> Votos Fulano: ${votosFulano} </p>`
+            resultado += `<p> Votos Beltrano: ${votosBeltrano} </p>`
+            resultado += `<p> Votos Brancos: ${votosBrancos} </p>`
+            resultado += `<p> Votos Nulos: ${votosNulo} </p>`
+            resultado += `<p> ------------------------ </p>`
+            resultado += `<h4> Total de votos: ${totalVotos} </h4>`
+            resultado += `<p> Percentual de Brancos: ${percentualBrancos.toFixed(2)} % </p>`
+            resultado += `<p> Percentual de Nulos: ${percentualNulos.toFixed(2)} % </p>`
+            resultado += `<p> Percentual de Fulano: ${percentualFulano.toFixed(2)} % </p>`
+            resultado += `<p> Percentual de Beltrano: ${percentualBeltrano.toFixed(2)} % </p>`
+            divresultado.innerHTML = resultado
+        }
     </script>
 </body>
+
 </html>
