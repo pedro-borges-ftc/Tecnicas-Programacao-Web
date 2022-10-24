@@ -24,3 +24,5 @@ class Gatos extends Animal {
     }
 }
 let clara = new Gatos("Clara", 33, "siamês");
+console.log(clara.cantar());
+console.log(clara.imprimeRaça());
