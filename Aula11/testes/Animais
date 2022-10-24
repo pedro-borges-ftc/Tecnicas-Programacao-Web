@@ -1,0 +1,26 @@
+class Animal {
+    constructor(nome, especie) {
+        this.nome = nome;
+        this.especie = especie;
+    }
+    cantar() {
+        return `${this.nome} pode cantar`;
+    }
+    dançar() {
+        return `${this.nome} pode dançar`;
+    }
+}
+let bingo = new Animal("Bingo", "Cachorro");
+console.log(bingo);
+
+class Gatos extends Animal {
+    constructor(nome, idade, raça) {
+        super(nome, "Gato");
+        this.idade = idade;
+        this.raça = raça;
+    }
+    imprimeRaça() {
+        return `eu tenho gato ${this.raça}`;
+    }
+}
+let clara = new Gatos("Clara", 33, "siamês");
