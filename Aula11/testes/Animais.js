@@ -12,8 +12,8 @@ class Animal {
 }
 let bingo = new Animal("Bingo", "Cachorro");
 console.log(bingo);
-
-class Gatos extends Animal {
+//--------------------------
+class Gato extends Animal {
     constructor(nome, idade, raça) {
         super(nome, "Gato");
         this.idade = idade;
@@ -23,6 +23,20 @@ class Gatos extends Animal {
         return `eu tenho gato ${this.raça}`;
     }
 }
-let clara = new Gatos("Clara", 33, "siamês");
+let clara = new Gato("Clara", 33, "siamês");
 console.log(clara.cantar());
 console.log(clara.imprimeRaça());
+console.log(clara)
+//-------------------------
+class Cachorro extends Animal {
+    constructor(nome, idade, ração) {
+        super(nome, "Cachorro");
+        this.idade = idade;
+        this.ração = ração;
+    }
+    raçãoFavorita() {
+        return `comida favoria é ${this.ração}`;
+    }
+}
+let rex = new Cachorro("rex",14,'T-bone')
+console.log(rex)

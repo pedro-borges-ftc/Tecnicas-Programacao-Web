@@ -5,3 +5,5 @@ function Pessoa(_nome) {
 pessoa = new Pessoa("Pedro");
 
 console.log(pessoa.Nome)
+console.log(pessoa['Nome'])
+console.log(pessoa)
