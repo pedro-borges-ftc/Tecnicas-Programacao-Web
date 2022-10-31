@@ -6,5 +6,9 @@ var carro = {
         }
 }
 
-carro.modelo = "Novo Ka";
-console.log(carro.getDetalhes());
+carro.modelo = "Novo Ka"
+carro.cor = "Branco"
+console.log(carro.getDetalhes())
+carro.imprimir = function(){return this.marca + ' - ' + this.modelo + ' - ' + this.cor}
+console.log(carro.imprimir())
+console.log(carro)
