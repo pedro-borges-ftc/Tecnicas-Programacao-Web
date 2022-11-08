@@ -8,7 +8,6 @@ function consultaCep() {
     request.onerror = function (e) {
         document.getElementById('divresultado').innerHTML = 'API offline ou CEP inválido'
     }
-    console.log("1")
 
     request.onload = () => {
         var tblcep = document.getElementById("tblcep").querySelector("tbody")
