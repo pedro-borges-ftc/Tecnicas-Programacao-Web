@@ -25,7 +25,7 @@ function consultaCep() {
                 `Bairro: ${response.bairro} <BR>` +
                 `CIDADE/UF: ${response.localidade}` +
                 `/ ${response.uf} <BR>`*/
-                document.getElementById('divresultado').innerHTML = ''
+            document.getElementById('divresultado').innerHTML = ''
             var coluna1 = document.createElement('td')
             var coluna2 = document.createElement('td')
             var linha = document.createElement('tr')
