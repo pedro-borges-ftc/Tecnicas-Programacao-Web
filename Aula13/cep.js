@@ -11,8 +11,12 @@ function consultaCep() {
     console.log("1")
 
     request.onload = () => {
+        var tblcep = document.getElementById("tblcep").querySelector("tbody")
+        tblcep.innerHTML = ''
         var response = JSON.parse(request.responseText)
+        
         console.log(request.responseText)
+        
         if (response.erro === true) {
             document.getElementById('divresultado').innerHTML = 'CEP não encontrado'
         } else {
@@ -21,14 +25,12 @@ function consultaCep() {
                 `Bairro: ${response.bairro} <BR>` +
                 `CIDADE/UF: ${response.localidade}` +
                 `/ ${response.uf} <BR>`*/
-
+                document.getElementById('divresultado').innerHTML = ''
             var coluna1 = document.createElement('td')
             var coluna2 = document.createElement('td')
             var linha = document.createElement('tr')
-            var tblcep = document.getElementById("tblcep").querySelector("tbody")
+            
             //var contador = tblsimulacao.childElementCount
-
-            tblcep.innerHTML = ''
 
             //CEP
             coluna1 = document.createElement('td')
