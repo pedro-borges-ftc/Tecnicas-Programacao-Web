@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Fill JS table CSM</title>
+
+    <link rel="stylesheet" href="./assets/stylesheet/reset.css" />
+    <link rel="stylesheet" href="./assets/stylesheet/style.css" />
+
+    <script type="text/javascript" src="./assets/javascript/script.js"></script>
+    <script type="text/javascript" src="./assets/javascript/scriptIDB.js"></script>
+</head>
+
+ <body onload="criarBancoDadosIDB()"> 
+<!-- <body> -->
+    <div id="nav">
+        Técnicas de Programação Web
+    </div>
+    <section id="table">
+        <!-- <form method="POST"> -->
+        <!--<form>-->
+            <div id="input-data">
+                <input id="name" class="input-text" placeholder="Nome" type="text" required />
+                <input id="email" class="input-text" placeholder="Email" type="email" required />
+                <input id="phone" class="input-text" placeholder="Telefone" type="number" required />
+                <input id="work" class="input-text" placeholder="Profissão" type="text" required />
+                
+                <input class="input-btn" type="button" value="Inserir" onclick="inserirRegistroIDB()"/>
+                <!--<input class="input-btn" type="button" value="Table" onclick="buscarRegistrosIDB()"/>-->
+
+            </div>
+        <!--</form>-->
+        <table id="myTable">
+            <thead id="0">
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Profissão</th>
+                <th>Ação</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+</body>
+
+</html>
