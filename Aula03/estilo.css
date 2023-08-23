@@ -36,6 +36,11 @@ body.orange{
     --text-color: rgb(242,239,239);
 }
 
+body.green{
+    --bg-color: rgb(69, 145, 87) ;
+    --text-color: rgb(242,239,239);
+}
+
 body{
     background-color: var(--bg-color);
     color: var(--text-color);
