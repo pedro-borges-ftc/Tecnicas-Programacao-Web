@@ -1,6 +1,7 @@
 //Entrada de Dados
-var numero_um = Number(window.prompt("Digite o primero número: "))
-var numero_dois = Number(window.prompt("Digite o segundo número: "))
+let teste_inicial = window.prompt("Digite seu nome: ")
+const numero_um = Number(window.prompt("Digite o primero número: "))
+const numero_dois = Number(window.prompt("Digite o segundo número: "))
 
 //Processamento dos Dados
 var soma = numero_um + numero_dois
@@ -15,5 +16,3 @@ document.writeln("<p>" + resultado_media + "</p>")
 /*alert(resultado_soma)
 alert(resultado_media)
 console.log(resultado_soma,resultado_media)*/
-
-window.document.get
