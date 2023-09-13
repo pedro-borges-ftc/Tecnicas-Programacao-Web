@@ -7,6 +7,7 @@ main{
     background-color: rgb(231, 228, 228);
     border-radius: 8px;
     margin: auto;
+    padding: 5px;
 }
 div{
     color: black;
