@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(18, 110, 167);
+    color: white;
+}
+main{
+    width: 250px;
+    background-color: rgb(231, 228, 228);
+    border-radius: 8px;
+    margin: auto;
+}
+div{
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /*border: 1px black solid;*/
+}
+table{
+    margin: auto;
+}
+footer, header, div{
+    text-align: center;
+}
+button{
+    background-color: rgb(34, 171, 26);
+    color: white;
+    margin-top: 8px;
+}
