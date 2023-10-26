@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Aula 10</title>
+    <link rel="stylesheet" href="contatos.css" />
+    <script type="text/javascript" src="contatos.js"></script>
+</head>
+
+ <body onload="montaTabela()"> 
+<!-- <body> -->
+    <header>
+        Técnicas de Programação Web
+    </header>
+    <section id="table">
+        <!-- <form method="POST"> -->
+        <!--<form>-->
+            <div id="input-data">
+                <input id="name" class="input-text" placeholder="Nome" type="text" required />
+                <input id="email" class="input-text" placeholder="Email" type="email" required />
+                <input id="phone" class="input-text" placeholder="Telefone" type="number" required />
+                <input id="work" class="input-text" placeholder="Profissão" type="text" required />
+                <br>
+                <input class="input-btn" type="button" value="Inserir" onclick="inserir()"/>
+                <!--<input class="input-btn" type="button" value="Table" onclick="buscarRegistrosIDB()"/>-->
+
+            </div>
+        <!--</form>-->
+        <div>
+            <table id="myTable">
+                <thead id="0">
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Profissão</th>
+                    <th>Ação</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>
