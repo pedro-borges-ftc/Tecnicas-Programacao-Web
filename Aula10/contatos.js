@@ -54,7 +54,10 @@ function inserir(){
     let p = document.getElementById('phone').value
     let w = document.getElementById('work').value
 
-    contatos.push([contatos.length + 1,n,e,p,w])
+    let indice = contatos.length - 1
+    let novoId = Number(contatos[indice][0]) + 1
+
+    contatos.push([novoId,n,e,p,w])
 
     montaTabela()
 
