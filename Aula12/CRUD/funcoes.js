@@ -58,8 +58,6 @@ function Listar() {
     tblListar.innerHTML = ''
 
     for (var i in tbClientes) {
-        var cli = JSON.parse(tbClientes[i])
-
         var coluna1 = document.createElement('td')
         var coluna2 = document.createElement('td')
         var coluna3 = document.createElement('td')
@@ -69,6 +67,8 @@ function Listar() {
 
         coluna1.innerHTML = "<img src='https://cdn.icon-icons.com/icons2/841/PNG/32/flat-style-circle-edit_icon-icons.com_66939.png' alt='" + i + "'class='btnEditar' width='17' height= '17'/>     "
         coluna1.innerHTML += "<img src='https://cdn.icon-icons.com/icons2/1380/PNG/32/vcsremoved_93492.png' alt='" + i + "' class='btnExcluir'width='17' height= '17'/></td>"
+        
+        var cli = JSON.parse(tbClientes[i])
         coluna2.innerHTML = `${cli.Codigo}`
         coluna3.innerHTML = `${cli.Nome}`
         coluna4.innerHTML = `${cli.Telefone}`

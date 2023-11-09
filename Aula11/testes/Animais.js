@@ -38,5 +38,5 @@ class Cachorro extends Animal {
         return `comida favoria é ${this.ração}`;
     }
 }
-let rex = new Cachorro("rex",14,'T-bone')
+let rex = new Cachorro("rex",14,'Pedigree')
 console.log(rex)
