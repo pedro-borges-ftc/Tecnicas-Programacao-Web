@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Registros Financeiros</title>
+    <title>Incluir/Editar Registro Financeiro</title>
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
     <div class="container">
-        <h1>Registro Financeiro</h1>
-        <form action="#" method="post">
+        <h1 id="form-title">Incluir Novo Registro Financeiro</h1>
+        <form id="form-financeiro">
+            <input type="hidden" id="record-index">
+            
             <label for="codigo">Código</label>
             <input type="text" id="codigo" name="codigo" required>
 
@@ -28,8 +30,9 @@
                 <option value="debito">Débito</option>
             </select>
 
-            <input type="submit" value="Adicionar Registro">
+            <input type="submit" value="Salvar Registro">
         </form>
     </div>
+    <script src="form.js"></script> 
 </body>
 </html>
