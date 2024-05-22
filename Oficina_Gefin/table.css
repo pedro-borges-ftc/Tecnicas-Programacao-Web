@@ -31,11 +31,11 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
-.btn-container {
+.btn-container, .filter-container {
     text-align: center;
     margin-bottom: 20px;
 }
-.btn {
+.btn, .btn-filter {
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
@@ -44,8 +44,14 @@ th {
     cursor: pointer;
     font-size: 16px;
 }
-.btn:hover {
+.btn:hover, .btn-filter:hover {
     background-color: #0056b3;
+}
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 5px;
 }
 .btn-edit {
     background-color: #ffc107;
@@ -68,4 +74,8 @@ th {
 }
 .btn-delete:hover {
     background-color: #c82333;
+}
+tfoot td {
+    font-weight: bold;
+    background-color: #f2f2f2;
 }
